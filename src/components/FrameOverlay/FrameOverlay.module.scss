@@ -1,0 +1,69 @@
+// small tablets/large smartphones (landscape)
+$screen-sm-min: 576px;
+// small tablets (portrait)
+$screen-md-min: 768px;
+// Tablets and small desktops
+$screen-lg-min: 882px;
+// large tablets/desktops
+$screen-xl-min: 1200px;
+
+@mixin sm {
+  @media (max-width: #{$screen-sm-min}) {
+    @content;
+  }
+}
+
+// medium devices
+
+@mixin md {
+  @media (max-width: #{$screen-md-min}) {
+    @content;
+  }
+}
+
+// large devices
+
+@mixin lg {
+  @media (max-width: #{$screen-lg-min}) {
+    @content;
+  }
+}
+
+// extra-large devices
+
+@mixin xl {
+  @media (max-width: #{$screen-xl-min}) {
+    @content;
+  }
+}
+
+// custom devices
+
+@mixin rwd($screen) {
+  @media (max-width: $screen+"px") {
+    @content;
+  }
+}
+
+.mainCont {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  position: absolute;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.frameContainer {
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  & > iFrame {
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+}

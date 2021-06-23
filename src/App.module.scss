@@ -1,0 +1,32 @@
+* {
+	margin: 0;
+	border: 0;
+	box-sizing: border-box;
+}
+
+.mainContainer {
+    display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+	width: 100vw;
+}
+
+
+.frame1 {
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+    position: absolute;
+	border: none;
+	opacity: 0;
+	z-index: 2;
+	pointer-events: none;
+}
+
+.frame2 {
+	position: absolute;
+	z-index: 1;
+	width: 100vw;
+	height: 100vh;
+}
