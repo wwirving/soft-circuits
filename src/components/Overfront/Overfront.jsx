@@ -1,20 +1,37 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./Overfront.module.scss";
+import Overback from "../Overback";
 
 const Overfront = (props) => {
   const isShown = props.modal ? styles.mainContainer : styles.opaque;
+
+  const [end, setEnd] = useState(false);
+
+  const toggleEnd = () => {
+    console.log("end");
+    setEnd(!end);
+  };
+
   return (
     <>
       <div className={isShown}>
         <div className={styles.blank}>
-          <p onClick={props.click}>X</p>
+          <Overback show={end} />
         </div>
-        <div className={styles.textContainer}>
+        <div
+          className={end ? styles.fadeContainer : styles.textContainer}
+          id="text"
+        >
           <p>POLYMORPH</p>
         </div>
         <div className={styles.formSection}>
-          <form>
-            <div className={styles.formDisplay}>
+          <form
+            onSubmit={(e) => {
+              e.preventDefault();
+              console.log(e);
+            }}
+          >
+            <div className={end ? styles.fadeDisplay : styles.formDisplay}>
               <input
                 type="email"
                 name="MERGE0"
@@ -23,7 +40,16 @@ const Overfront = (props) => {
                 className={styles.email}
               />
               <div className={styles.line}></div>
-              <input type="submit" value="SIGN UP" className={styles.signUp} />
+              <input
+                type="submit"
+                value="SIGN UP"
+                className={styles.signUp}
+                onClick={(e) => {
+                  e.preventDefault();
+                  console.log(document.getElementById("MERGE0").value);
+                  toggleEnd();
+                }}
+              />
             </div>
           </form>
         </div>

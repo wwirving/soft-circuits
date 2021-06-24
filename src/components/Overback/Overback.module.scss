@@ -1,3 +1,50 @@
+// small tablets/large smartphones (landscape)
+$screen-sm-min: 576px;
+// small tablets (portrait)
+$screen-md-min: 768px;
+// Tablets and small desktops
+$screen-lg-min: 882px;
+// large tablets/desktops
+$screen-xl-min: 1200px;
+
+@mixin sm {
+  @media (min-width: #{$screen-sm-min}) {
+    @content;
+  }
+}
+
+// medium devices
+
+@mixin md {
+  @media (min-width: #{$screen-md-min}) {
+    @content;
+  }
+}
+
+// large devices
+
+@mixin lg {
+  @media (min-width: #{$screen-lg-min}) {
+    @content;
+  }
+}
+
+// extra-large devices
+
+@mixin xl {
+  @media (min-width: #{$screen-xl-min}) {
+    @content;
+  }
+}
+
+// custom devices
+
+@mixin rwd($screen) {
+  @media (max-width: $screen+"px") {
+    @content;
+  }
+}
+
 .mainContainer {
   width: 100vw;
   height: 100vh;
@@ -31,8 +78,35 @@
   align-items: center;
   position: absolute;
   pointer-events: none;
+  z-index: 50;
+  opacity: 1;
+  transition: opacity 10s;
+}
+
+.opaque {
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  pointer-events: none;
 }
 
 .svgBox > svg {
-  width: 65%;
+  width: 80%;
+  max-width: 500px;
+  margin-left: 0;
+  opacity: 0.9;
+  margin-bottom: 25%;
+  @include lg {
+    margin-bottom: 20%;
+    max-width: 550px;
+  }
+  @include xl {
+    margin-bottom: 8%;
+    max-width: 650px;
+  }
+  filter: blur(1px);
+  transition: blur 5s;
 }
