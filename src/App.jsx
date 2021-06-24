@@ -6,7 +6,7 @@ import FrameOverlay from "./components/FrameOverlay";
 import Overfront from "./components/Overfront";
 import Overback from "./components/Overback";
 import Button from "./components/Button/Button";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 function App() {
   const [modal, setModal] = useState(false);
@@ -15,6 +15,11 @@ function App() {
     console.log("u");
     setModal(!modal);
   };
+
+  useEffect(() => {
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty("--vh", `${vh}px`);
+  }, []);
 
   return (
     <div className="App">

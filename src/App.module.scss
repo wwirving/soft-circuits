@@ -114,6 +114,7 @@ body {
   align-items: center;
   justify-content: center;
   height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
   width: 100vw;
   -webkit-animation: fadein 10s;
   /* Safari, Chrome and Opera > 12.1 */
