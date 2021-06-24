@@ -20,6 +20,18 @@
   grid-template-rows: 0.7fr 1fr 1fr;
 }
 
+.opaque {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  z-index: 50;
+  top: 0;
+  display: none;
+  pointer-events: none;
+  grid-template-columns: 1fr;
+  grid-template-rows: 0.7fr 1fr 1fr;
+}
+
 .blank {
   width: 100%;
   height: 100%;

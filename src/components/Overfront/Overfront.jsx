@@ -1,12 +1,13 @@
 import React from "react";
 import styles from "./Overfront.module.scss";
 
-const Overfront = () => {
+const Overfront = (props) => {
+  const isShown = props.modal ? styles.mainContainer : styles.opaque;
   return (
     <>
-      <div className={styles.mainContainer}>
+      <div className={isShown}>
         <div className={styles.blank}>
-          <p>X</p>
+          <p onClick={props.click}>X</p>
         </div>
         <div className={styles.textContainer}>
           <p>POLYMORPH</p>

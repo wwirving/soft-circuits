@@ -1,0 +1,14 @@
+.svgBox {
+  width: 100%;
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  position: absolute;
+  bottom: 5%;
+}
+
+.svgBox > svg {
+  width: 40%;
+}
