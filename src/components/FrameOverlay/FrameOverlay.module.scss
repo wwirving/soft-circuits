@@ -135,6 +135,56 @@ $screen-xl-min: 1200px;
   }
 }
 
+@keyframes fade {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+@-moz-keyframes fade {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+@-webkit-keyframes fade {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+@-o-keyframes fade {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+@-ms-keyframes fade {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
 .mainCont {
   width: 100vw;
   height: 100vh;
@@ -143,20 +193,22 @@ $screen-xl-min: 1200px;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
   opacity: 0;
-  -webkit-animation: fadeout 60s;
+  -webkit-animation: fade 30s infinite;
   /* Safari, Chrome and Opera > 12.1 */
-  -moz-animation: fadeout 60s;
+  -moz-animation: fade 30s infinite;
   /* Firefox < 16 */
-  -ms-animation: fadeout 60s;
+  -ms-animation: fade 30s infinite;
   /* Internet Explorer */
-  -o-animation: fadeout 60s;
+  -o-animation: fade 30s infinite;
   /* Opera < 12.1 */
-  animation: fadeout 60s;
+  animation: fade 30s infinite;
   pointer-events: none;
 }
 
 .frameContainer {
   background-color: transparent;
+  width: 100%;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;

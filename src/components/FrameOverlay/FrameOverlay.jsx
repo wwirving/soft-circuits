@@ -5,12 +5,7 @@ const FrameOverlay = (props) => {
   return (
     <div className={styles.mainCont}>
       <div className={styles.frameContainer}>
-        <iframe
-          src={props.link}
-          frameborder="0"
-          title="objectCloud"
-          allow="autoplay"
-        ></iframe>
+        <iframe src={props.link} frameborder="0" title="objectCloud"></iframe>
       </div>
     </div>
   );

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./Overfront.module.scss";
 import Overback from "../Overback";
 
@@ -11,6 +11,11 @@ const Overfront = (props) => {
     console.log("end");
     setEnd(!end);
   };
+
+  useEffect(() => {
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty("--vh", `${vh}px`);
+  }, []);
 
   return (
     <>
