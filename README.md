@@ -1,1 +1,7 @@
-Web Application developed for Soft Circuits
+Libraries ->
+
+React
+Three
+Howler
+Tuna
+
